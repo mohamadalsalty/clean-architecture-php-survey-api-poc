@@ -1,0 +1,19 @@
+{
+    "name": "alsalty/surveys",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohamad Al Salty",
+            "email": "mohamadhazems@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "*"
+    }
+}

@@ -1,0 +1,20 @@
+# Ignore composer files
+vendor
+composer.phar
+composer.lock
+
+# Ignore IDE specific files
+.vscode
+.idea
+
+# Ignore log and cache files
+/log/*.log
+/var/cache/*
+
+# Ignore sensitive or configuration files
+.env
+/config/*.php
+
+# Ignore user uploads
+/public/uploads/
+mysql/*

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UseCases\SurveyUseCase;
+use JetBrains\PhpStorm\NoReturn;
 
 /**
  *
@@ -53,6 +54,26 @@ class SurveyController
             http_response_code(404);
             $response = [
                 'error' => 'Survey not found with ID: ' . $id,
+            ];
+        }
+
+        echo json_encode($response);
+    }
+
+
+    /**
+     * @return void
+     */
+    public function findAllSurveys(): void
+    {
+        $surveys = $this->surveyUseCase->findAll();
+
+        $response = [];
+
+        foreach ($surveys as $survey) {
+            $response[] = [
+                'id' => $survey->getId(),
+                'title' => $survey->getTitle(),
             ];
         }
 

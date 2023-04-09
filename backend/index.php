@@ -31,6 +31,12 @@ $router->addRoute(/**
     $surveyController->createSurvey($title);
 });
 
+$router->addRoute(/**
+ * @param $id
+ * @return void
+ */ 'GET', '/surveys/all', function () use ($surveyController) {
+    $surveyController->findAllSurveys();
+});
 
 
 

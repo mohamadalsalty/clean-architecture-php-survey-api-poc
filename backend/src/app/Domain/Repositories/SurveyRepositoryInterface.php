@@ -20,4 +20,10 @@ interface SurveyRepositoryInterface
      * @return SurveyEntity|null
      */
     public function find(string $id): ?SurveyEntity;
+
+
+    /**
+     * @return array
+     */
+    public function findAll(): array;
 }

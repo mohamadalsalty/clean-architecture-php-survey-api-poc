@@ -41,4 +41,13 @@ class SurveyUseCase
     {
         return $this->surveyRepository->find($id);
     }
+
+
+    /**
+     * @return array|null
+     */
+    public function findAll(): ?array
+    {
+        return $this->surveyRepository->findAll();
+    }
 }

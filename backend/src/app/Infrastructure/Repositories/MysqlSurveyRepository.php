@@ -52,4 +52,23 @@ class MysqlSurveyRepository implements SurveyRepositoryInterface
 
         return new SurveyEntity($survey['id'], $survey['title']);
     }
+
+
+    /**
+     * @return array
+     */
+    public function findAll(): array
+    {
+        $stmt = $this->connection->query("SELECT * FROM surveys");
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        $surveys = [];
+        foreach ($result as $row) {
+            $survey = new SurveyEntity($row['id'], $row['title']);
+            $surveys[] = $survey;
+        }
+
+        return $surveys;
+    }
+
 }
